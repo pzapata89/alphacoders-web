@@ -13,21 +13,17 @@ pagina = st.query_params.get("page", "inicio")
 
 def mostrar_inicio():
     st.title("🚀 Hola Mundo, soy Alphacoders")
-
     st.write(
         """
         Bienvenido a **Alphacoders**.
-
         Creamos soluciones de software, automatización e inteligencia artificial.
         """
     )
-
     st.divider()
+    if st.button("🔒 Ver Política de Privacidad"):
+        st.query_params["page"] = "privacidad"
+        st.rerun()
 
-    st.page_link(
-        "app.py?page=privacidad",
-        label="🔒 Ver Política de Privacidad",
-    )
 
 
 def mostrar_privacidad():
